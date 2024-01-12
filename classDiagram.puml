@@ -1,0 +1,76 @@
+@startuml
+
+StartWindow o-- MainWindow
+MainWindow *-- ProgramInfoWindow
+MainWindow *-- AuthorWindow
+MainWindow *-- ResultsViewWindow
+Result <-- MainWindow
+Result <-- ResultsViewWindow
+
+class StartWindow {
+    mainWindow
+    next
+    exit
+    __init__()
+    showMainWindow()
+    close()
+}
+
+class MainWindow {
+    texts
+    textIndex
+    isType
+    isLetterRed
+    mistakesNum
+    timer
+    time_elapsed
+    programInfoWindow
+    authorWindow
+    resultsWindow
+
+    _init__()
+    updateComboBoxes()
+    randomTextClick()
+    startEndClick()
+    startTyping()
+    stopTyping()
+    toggleTimer()
+    updateTime()
+    resetTimer()
+    keyPressEvent()
+    colorLetter()
+    showResults()
+    showAuthorWindow()
+    showProgramInfoWindow()
+    indent()
+    readTexts()
+}
+class ProgramInfoWindow {
+    back
+    __init__()
+}
+
+class ResultsViewWindow {
+    canvas
+    figure
+    ax1
+    ax2
+    __init__()
+}
+
+class Result {
+    date
+    speed
+    correctness
+    __init__()
+    write()
+    read()
+}
+
+class AuthorWindow {
+    back
+    __init__()
+}
+
+
+@enduml
